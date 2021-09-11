@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" defaultHref="/verification" icon="chevron-back-outline"></ion-back-button>
+    </ion-buttons>
+    <ion-title> نوع کاربری‌تان را انتخاب نمایید </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <div class="form">
+    <ion-list lines="none">
+      <ion-item lines="none" class="animate__animated animate__fadeInUp">
+        <div class="item_inner d-flex">
+          <!-- <div class="icon_box ion-text-start">
+            <img src="assets/images/ic_name.png" />
+          </div> -->
+          <!-- <div class="input_box">
+                        <ion-label mode="md" position="stacked">{{"full_name" | translate}}</ion-label>
+                        <ion-input mode="md" type="name" placeholder="" value=""></ion-input>
+                    </div> -->
+          <ion-card (click)="selectUserType(0)">
+              <ion-card-header>
+                <img src="assets/images/doctor.png" />
+              <ion-card-title>
+                پزشک هستم
+            </ion-card-title>
+            </ion-card-header>
+          </ion-card>
+        </div>
+      </ion-item>
+
+      <ion-item lines="none" class="animate__animated animate__fadeInUp">
+        <div class="item_inner d-flex">
+          <!-- <div class="icon_box ion-text-start">
+            <img src="assets/images/ic_name.png" />
+          </div> -->
+          <!-- <div class="input_box">
+                        <ion-label mode="md" position="stacked">{{"full_name" | translate}}</ion-label>
+                        <ion-input mode="md" type="name" placeholder="" value=""></ion-input>
+                    </div> -->
+          <ion-card (click)="selectUserType(1)">
+              <ion-card-header>
+                <img src="assets/images/nurse.png" />
+              <ion-card-title>
+                پرستار هستم
+            </ion-card-title>
+            </ion-card-header>
+          </ion-card>
+        </div>
+      </ion-item>
+
+    </ion-list>
+  </div>
+</ion-content>
+
+<!-- <ion-footer class="ion-no-border animate__animated animate__fadeInUp">
+  <ion-button size="large" expand="full" class="btn" (click)="verification()"
+    >{{'continue' | translate}}</ion-button
+  >
+</ion-footer> -->

@@ -1,0 +1,264 @@
+<ion-list lines="none">
+  <form #cntForm="ngForm" (ngSubmit)="submitForm(cntForm)">
+    <div class="form">
+      <ion-item class="animate__animated animate__fadeInUp" lines="none">
+        <div class="item_inner d-flex">
+          <div class="input_box">
+            <ion-label mode="md" position="stacked">استان محل سکونت</ion-label>
+            <ion-input
+              mode="md"
+              type="text"
+              name="province"
+              maxlength="20"
+              ngModel
+              required
+              #provinceRef="ngModel"
+            ></ion-input>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item
+        *ngIf="!provinceRef.valid && provinceRef.touched"
+        class="animate__animated animate__fadeInUp"
+        lines="none"
+      >
+        <ion-label mode="md" position="stacked"
+          >استان محل سکونت خود را وارد نمایید</ion-label
+        >
+      </ion-item>
+
+      <ion-item class="animate__animated animate__fadeInUp" lines="none">
+        <div class="item_inner d-flex">
+          <div class="input_box">
+            <ion-label mode="md" position="stacked">شهر محل سکونت</ion-label>
+            <ion-input
+              mode="md"
+              name="city"
+              ngModel
+              required
+              #cityRef="ngModel"
+              maxlength="20"
+            ></ion-input>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item
+        *ngIf="!cityRef.valid && cityRef.touched"
+        class="animate__animated animate__fadeInUp"
+        lines="none"
+      >
+        <ion-label mode="md" position="stacked"
+          >شهر محل سکونت خود را وارد نمایید</ion-label
+        >
+      </ion-item>
+
+      <ion-item class="animate__animated animate__fadeInUp" lines="none">
+        <div class="item_inner d-flex">
+          <div class="input_box">
+            <ion-label mode="md" position="stacked">آدرس محل سکونت</ion-label>
+            <ion-textarea
+              mode="md"
+              type="text"
+              name="homeAddress"
+              ngModel
+              required
+              maxlength="100"
+              #homeAddressRef="ngModel"
+            ></ion-textarea>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item
+        *ngIf="!homeAddressRef.valid && homeAddressRef.touched"
+        class="animate__animated animate__fadeInUp"
+        lines="none"
+      >
+        <ion-label mode="md" position="stacked"
+          >آدرس محل سکونت خود را وارد نمایید</ion-label
+        >
+      </ion-item>
+
+      <ion-item class="animate__animated animate__fadeInUp" lines="none">
+        <div class="item_inner d-flex">
+          <div class="input_box">
+            <ion-label mode="md" position="stacked"
+              >کد پستی محل سکونت</ion-label
+            >
+            <ion-input
+              mode="md"
+              type="number"
+              name="homePostalCode"
+              ngModel
+              required
+              #homePCodeRef="ngModel"
+              pattern=".{10,10}"
+            ></ion-input>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item
+        *ngIf="!homePCodeRef.valid && homePCodeRef.touched"
+        class="animate__animated animate__fadeInUp"
+        lines="none"
+      >
+        <ion-label mode="md" position="stacked"
+          >کد پستی محل سکونت خود را وارد نمایید</ion-label
+        >
+      </ion-item>
+
+      <ion-item class="animate__animated animate__fadeInUp" lines="none">
+        <div class="item_inner d-flex">
+          <div class="input_box">
+            <ion-label mode="md" position="stacked"
+              >تلفن ثابت محل سکونت (همراه با کد)</ion-label
+            >
+            <ion-input
+            dir="ltr"
+              mode="md"
+              type="number"
+              name="homePhone"
+              ngModel
+              required
+              #homePhoneRef="ngModel"
+              pattern=".{8,12}"
+            ></ion-input>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item
+        *ngIf="!homePhoneRef.valid && homePhoneRef.touched"
+        class="animate__animated animate__fadeInUp"
+        lines="none"
+      >
+        <ion-label mode="md" position="stacked"
+          >شماره تلفن صحیح محل سکونت خود را وارد نمایید</ion-label
+        >
+      </ion-item>
+
+      <ion-item class="animate__animated animate__fadeInUp" lines="none">
+        <div class="item_inner d-flex">
+          <div class="input_box">
+            <ion-label mode="md" position="stacked">آدرس محل کار</ion-label>
+            <ion-textarea
+              mode="md"
+              type="text"
+              name="workAddress"
+              maxlength="100"
+              ngModel
+              required
+              #workAddressRef="ngModel"
+            ></ion-textarea>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item
+        *ngIf="!workAddressRef.valid && workAddressRef.touched"
+        class="animate__animated animate__fadeInUp"
+        lines="none"
+      >
+        <ion-label mode="md" position="stacked"
+          >آدرس محل کار خود را وارد نمایید</ion-label
+        >
+      </ion-item>
+
+      <ion-item class="animate__animated animate__fadeInUp" lines="none">
+        <div class="item_inner d-flex">
+          <div class="input_box">
+            <ion-label mode="md" position="stacked">کد پستی محل کار</ion-label>
+            <ion-input
+              mode="md"
+              type="number"
+              name="workPostalCode"
+              ngModel
+              required
+              #workPCodeRef="ngModel"
+              pattern=".{10,10}"
+            ></ion-input>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item
+        *ngIf="!workPCodeRef.valid && workPCodeRef.touched"
+        class="animate__animated animate__fadeInUp"
+        lines="none"
+      >
+        <ion-label mode="md" position="stacked"
+          >کد پستی محل کار خود را وارد نمایید</ion-label
+        >
+      </ion-item>
+
+      <ion-item class="animate__animated animate__fadeInUp" lines="none">
+        <div class="item_inner d-flex">
+          <div class="input_box">
+            <ion-label mode="md" position="stacked"
+              >تلفن ثابت محل کار (همراه با کد)</ion-label
+            >
+            <ion-input
+              mode="md"
+              type="number"
+              name="workPhone"
+              ngModel
+              required
+              #workPhoneRef="ngModel"
+              pattern=".{8,12}"
+            ></ion-input>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item
+        *ngIf="!workPhoneRef.valid && workPhoneRef.touched"
+        class="animate__animated animate__fadeInUp"
+        lines="none"
+      >
+        <ion-label mode="md" position="stacked"
+          >شماره تلفن صحیح محل کار خود را وارد نمایید</ion-label
+        >
+      </ion-item>
+
+      <ion-item class="animate__animated animate__fadeInUp" lines="none">
+        <div class="item_inner d-flex">
+          <div class="input_box">
+            <ion-label mode="md" position="stacked">ایمیل</ion-label>
+            <ion-input
+              mode="md"
+              type="email"
+              name="email"
+              ngModel
+              maxlength="40"
+              #emailRef="ngModel"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+            ></ion-input>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item
+        *ngIf="!emailRef.valid && emailRef.touched"
+        class="animate__animated animate__fadeInUp"
+        lines="none"
+      >
+        <ion-label mode="md" position="stacked"
+          >ایمیل وارد ضده صحیح نیست</ion-label
+        >
+      </ion-item>
+
+      <ion-item class="animate__animated animate__fadeInUp" lines="none">
+        <div class="item_inner d-flex">
+          <div class="input_box">
+            <ion-label mode="md" position="stacked">وبسایت</ion-label>
+            <ion-input
+              mode="md"
+              type="text"
+              name="website"
+              ngModel
+              maxlength="40"
+            ></ion-input>
+          </div>
+        </div>
+      </ion-item>
+
+      <ion-button type="submit" padding class="btn" [disabled]="!cntForm.valid"
+        >ذخیره تغییرات</ion-button
+      >
+    </div>
+  </form>
+</ion-list>

@@ -1,0 +1,184 @@
+<ion-list lines="none">
+  <form #eduForm="ngForm" (ngSubmit)="saveForm(eduForm)">
+    <div class="form">
+      <ion-item class="animate__animated animate__fadeInUp" lines="none">
+        <div class="item_inner d-flex">
+          <div class="input_box">
+            <ion-label mode="md" position="stacked">نام دانشگاه</ion-label>
+            <ion-input
+              mode="md"
+              type="text"
+              name="universityName"
+              maxlength="30"
+              ngModel
+              required
+              #uniNameRef="ngModel"
+            ></ion-input>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item
+        *ngIf="!uniNameRef.valid && uniNameRef.touched"
+        class="animate__animated animate__fadeInUp"
+        lines="none"
+      >
+        <ion-label mode="md" position="stacked"
+          >نام دانشگاه را وارد نمایید</ion-label
+        >
+      </ion-item>
+
+      <ion-item class="animate__animated animate__fadeInUp" lines="none">
+        <div class="item_inner d-flex">
+          <div class="input_box">
+            <ion-label mode="md" position="stacked">مقطع</ion-label>
+            <div class="d-flex" style="align-items: flex-end">
+              <ion-select
+                mode="ios"
+                interface="popover"
+                required
+                name="eduGrade"
+                ngModel
+                #eduGradeRef="ngModel"
+              >
+                <ion-select-option value="1">کارشناسی</ion-select-option>
+                <ion-select-option value="2">کارشناسی ارشد</ion-select-option>
+                <ion-select-option value="3">دکترا</ion-select-option>
+              </ion-select>
+              <ion-icon
+                class="zmdi zmdi-chevron-down ion-text-end end"
+              ></ion-icon>
+            </div>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item
+        *ngIf="!eduGradeRef.valid && eduGradeRef.touched"
+        class="animate__animated animate__fadeInUp"
+        lines="none"
+      >
+        <ion-label mode="md" position="stacked"
+          >مقطع تحصیلی را انتخاب نمایید</ion-label
+        >
+      </ion-item>
+
+      <ion-item class="animate__animated animate__fadeInUp" lines="none">
+        <div class="item_inner d-flex">
+          <div class="input_box">
+            <ion-label mode="md" position="stacked">رشته تحصیلی</ion-label>
+            <ion-input
+              mode="md"
+              type="text"
+              name="fieldOfStudy"
+              ngModel
+              required
+              #fldOfStudyRef="ngModel"
+              maxlength="30"
+            ></ion-input>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item
+        *ngIf="!fldOfStudyRef.valid && fldOfStudyRef.touched"
+        class="animate__animated animate__fadeInUp"
+        lines="none"
+      >
+        <ion-label mode="md" position="stacked"
+          >رشته تحصیلی را وارد نمایید</ion-label
+        >
+      </ion-item>
+
+      <ion-item class="animate__animated animate__fadeInUp" lines="none">
+        <div class="item_inner d-flex">
+          <div class="input_box">
+            <ion-label mode="md" position="stacked">سال شروع</ion-label>
+            <ion-input
+              dir="ltr"
+              mode="md"
+              type="number"
+              name="startingYear"
+              ngModel
+              required
+              min="1300"
+              max="1400"
+              #startYearRef="ngModel"
+            ></ion-input>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item
+        *ngIf="!startYearRef.valid && startYearRef.touched"
+        class="animate__animated animate__fadeInUp"
+        lines="none"
+      >
+        <ion-label mode="md" position="stacked">اجباری</ion-label>
+      </ion-item>
+
+      <ion-item class="animate__animated animate__fadeInUp" lines="none">
+        <div class="item_inner d-flex">
+          <div class="input_box">
+            <ion-label mode="md" position="stacked">سال پایان</ion-label>
+            <ion-input
+              dir="ltr"
+              mode="md"
+              type="number"
+              name="endYear"
+              ngModel
+              required
+              [min]="startYearRef.value"
+              max="1400"
+              #endYearRef="ngModel"
+            ></ion-input>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item
+        *ngIf="!endYearRef.valid && endYearRef.touched"
+        class="animate__animated animate__fadeInUp"
+        lines="none"
+      >
+        <ion-label mode="md" position="stacked">اجباری</ion-label>
+      </ion-item>
+
+      <ion-item class="animate__animated animate__fadeInUp" lines="none">
+        <div class="item_inner d-flex">
+          <div class="input_box">
+            <ion-label mode="md"> در حال تحصیل هستم </ion-label>
+            <ion-checkbox mode="md" name="stillStudying" #isStudyingChk></ion-checkbox>
+          </div>
+        </div>
+      </ion-item>
+
+      <div *ngIf="!isStudyingChk.checked" class="form documentation animate__animated animate__fadeInUp" #degreeDiv>
+        <ion-item class="animate__animated animate__fadeInUp">
+          <div class="item_inner d-flex">
+            <ion-icon
+              class="zmdi zmdi-assignment-alert ion-text-start"
+            ></ion-icon>
+            <div class="text_box">
+              <h3>تصویر مدرک</h3>
+              <h4 class="d-flex">
+                <span class="id_details">{{
+                  "not_uploaded_yet" | translate
+                }}</span>
+                <span class="end ion-text-end">{{ "upload" | translate }}</span>
+              </h4>
+            </div>
+          </div>
+        </ion-item>
+
+        <ion-item class="animate__animated animate__fadeInUp" lines="none">
+          <div class="item_inner d-flex">
+            <div class="input_box">
+              <ion-label mode="md" position="stacked"
+                >آخرین مدرک تحصیلی من است</ion-label
+              >
+              <ion-checkbox mode="md" name="isLatestDegree"></ion-checkbox>
+            </div>
+          </div>
+        </ion-item>
+      </div>
+
+      <ion-button type="submit" padding [disabled]="!eduForm.valid" class="btn">ذخیره تغییرات</ion-button>
+    </div>
+  </form>
+</ion-list>

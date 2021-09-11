@@ -1,0 +1,156 @@
+<ion-list lines="none">
+  <form #specForm="ngForm" (ngSubmit)="submitForm(specForm)">
+    <div class="form">
+      <ion-item class="animate__animated animate__fadeInUp" lines="none">
+        <div class="item_inner d-flex">
+          <div class="input_box">
+            <ion-label mode="md" position="stacked">شماره پروانه</ion-label>
+            <ion-input
+              mode="md"
+              type="text"
+              name="licenseNo"
+              maxlength="15"
+              ngModel
+              required
+              #licenseNoRef="ngModel"
+            ></ion-input>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item
+        *ngIf="!licenseNoRef.valid && licenseNoRef.touched"
+        class="animate__animated animate__fadeInUp"
+        lines="none"
+      >
+        <ion-label mode="md" position="stacked"
+          >شماره پروانه را وارد نمایید</ion-label
+        >
+      </ion-item>
+
+      <ion-item class="animate__animated animate__fadeInUp" lines="none">
+        <div class="item_inner d-flex">
+          <div class="input_box">
+            <ion-label mode="md" position="stacked">شماره نظام پزشکی</ion-label>
+            <ion-input
+              mode="md"
+              type="text"
+              name="medicalSystemNo"
+              maxlength="15"
+              ngModel
+              required
+              #medSysNoRef="ngModel"
+            ></ion-input>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item
+        *ngIf="!medSysNoRef.valid && medSysNoRef.touched"
+        class="animate__animated animate__fadeInUp"
+        lines="none"
+      >
+        <ion-label mode="md" position="stacked"
+          >شماره نظام پزشکی خود را وارد نمایید</ion-label
+        >
+      </ion-item>
+
+      <!-- <ion-item class="animate__animated animate__fadeInUp" lines="none">
+        <div class="item_inner d-flex">
+          <div class="input_box">
+            <ion-label mode="md" position="stacked"
+              >استان هایی که ارائه خدمت دارید</ion-label
+            >
+            <div class="buttons d-flex">
+              <ion-select
+                multiple
+                okText="تایید"
+                cancelText="انصراف"
+                name="acceptedProvinces"
+                #acpProvincesRef="ngModel"
+                ngModel
+                required
+              >
+                <ion-select-option value="family">تهران</ion-select-option>
+                <ion-select-option value="land">گیلان</ion-select-option>
+                <ion-select-option value="crime">مرکزی</ion-select-option>
+              </ion-select>
+              <ion-icon
+                class="zmdi zmdi-chevron-down ion-text-end end"
+              ></ion-icon>
+            </div>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item
+        *ngIf="!acpProvincesRef.valid && acpProvincesRef.touched"
+        class="animate__animated animate__fadeInUp"
+        lines="none"
+      >
+        <ion-label mode="md" position="stacked"
+          >حداقل یک استان را انتخاب نمایید</ion-label
+        >
+      </ion-item> -->
+
+      <ion-item class="animate__animated animate__fadeInUp" lines="none">
+        <div class="item_inner d-flex">
+          <div class="input_box">
+            <ion-label mode="md" position="stacked">انتخاب تخصص ها</ion-label>
+            <div class="buttons d-flex">
+              <ion-select
+                multiple
+                okText="تایید"
+                cancelText="انصراف"
+                name="specialties"
+                #acpWorkScopesRef="ngModel"
+                ngModel
+                required
+              >
+                <ion-select-option value="family">زنان</ion-select-option>
+                <ion-select-option value="land">مغز و اعصاب</ion-select-option>
+                <ion-select-option value="crime">جراحی</ion-select-option>
+                <ion-select-option value="tax">پوست و مو</ion-select-option>
+                <ion-select-option value="military"
+                  >عفونی</ion-select-option
+                >
+                <ion-select-option value="work">گوش حلق و بینی</ion-select-option>
+                <ion-select-option value="judge">کلیه و مجاری ادراری</ion-select-option>
+                <ion-select-option value="insurance">چشم</ion-select-option>
+              </ion-select>
+              <ion-icon
+                class="zmdi zmdi-chevron-down ion-text-end end"
+              ></ion-icon>
+            </div>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item
+        *ngIf="!acpWorkScopesRef.valid && acpWorkScopesRef.touched"
+        class="animate__animated animate__fadeInUp"
+        lines="none"
+      >
+        <ion-label mode="md" position="stacked"
+          >حداقل یک تخصص انتخاب نمایید</ion-label
+        >
+      </ion-item>
+
+      <ion-item class="animate__animated animate__fadeInUp" lines="none">
+        <div class="item_inner d-flex">
+          <div class="input_box">
+            <ion-label mode="md" position="stacked">هیات علمی دانشگاه</ion-label>
+            <ion-input
+              mode="md"
+              name="universityOfFaculty"
+              ngModel
+              placeholder="اگر عضو هیات علمی هستید نام دانشگاه را وارد کنید"
+              #uniOfFcltyRef="ngModel"
+              maxlength="30"
+            ></ion-input>
+          </div>
+        </div>
+      </ion-item>
+
+      <ion-button type="submit" padding [disabled]="!specForm.valid" class="btn"
+        >ذخیره تغییرات</ion-button
+      >
+    </div>
+  </form>
+</ion-list>

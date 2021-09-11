@@ -1,0 +1,98 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            <div class="d-flex " [ngClass]="fabAction ? 'active' : ''">
+                <span>{{'new_delivery_task' | translate}}</span>
+
+                
+<!--
+                <div class="order_info_button end" (click)="toggleFab()">
+                    <span class="info">
+                        <ion-icon class="zmdi zmdi-shopping-basket ion-text-start"></ion-icon>
+                        {{'order_info' | translate}}
+                    </span>
+                    <span class="cloes">
+                        <ion-icon class="zmdi zmdi-close ion-text-start"></ion-icon>
+                        {{'cloes' | translate}}
+                    </span>
+                </div>
+-->
+
+            </div>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-footer class="ion-no-border animate__animated animate__fadeInUp">
+    <ion-card>
+        <div class="card_header d-flex">
+            <div class="img_box">
+                <img src="assets/images/Vegetables_Fruitsact.png">
+            </div>
+            <div class="text_box">
+                <h2>{{newRequest.title}}</h2>
+                <!-- <h3>16.5 km <span>(20 min)</span></h3> -->
+            </div>
+
+
+            <!--
+            <div class="direction end">
+                <ion-icon class="zmdi zmdi-navigation ion-text-start"></ion-icon>
+                {{'direction' | translate}}
+            </div>
+-->
+
+        </div>
+        <div class="delivery_details">
+            <div class="delivery_address d-flex animate__animated animate__fadeInUp">
+                <ion-icon class="zmdi zmdi-comment-text ion-text-center"></ion-icon>
+                <div class="text_box">
+                    <h2>موضوع:</h2>
+                    <p>{{newRequest.subjectTitle}}</p>
+                </div>
+
+
+                <!--
+                <div class="iocn_box end d-flex">
+                    <ion-icon class="zmdi zmdi-comment-alt-text ion-text-end"></ion-icon>
+                    <ion-icon class="zmdi zmdi-phone ion-text-end end"></ion-icon>
+                </div>
+-->
+            </div>
+            <div class="dotted">
+                <!-- <span></span>
+                <span></span>
+                <span></span> -->
+            </div>
+            <div class="delivery_address d-flex animate__animated animate__fadeInUp">
+                <ion-icon class="zmdi zmdi-account-circle ion-text-center"></ion-icon>
+                <div class="text_box">
+                    <h2>{{newRequest.customerFullName}}</h2>
+                    <p>{{newRequest.customerCity}}</p>
+                </div>
+
+                <!--
+                <div class="iocn_box end d-flex">
+                    <ion-icon class="zmdi zmdi-phone ion-text-end end"></ion-icon>
+                </div>
+-->
+
+            </div>
+            <div class="delivery_address d-flex animate__animated animate__fadeInUp">
+                <ion-icon class="zmdi zmdi-balance-wallet ion-text-center"></ion-icon>
+                <div class="text_box">
+                    <h2>{{newRequest.cost | currency:'':'':'1.0-0'}}</h2>
+                    <p>هزینه</p>
+                </div>
+
+                <!--
+                <div class="iocn_box end d-flex">
+                    <ion-icon class="zmdi zmdi-phone ion-text-end end"></ion-icon>
+                </div>
+-->
+
+            </div>
+        </div>
+    </ion-card>
+    <ion-button size="large" shape="full" class="btn animate__animated animate__fadeInUp" (click)="accepted()">{{'accept_delivery' | translate}}</ion-button>
+</ion-footer>

@@ -1,0 +1,171 @@
+<ion-list lines="none">
+  <form #form="ngForm" (ngSubmit)="submitForm(form)">
+    <div class="form">
+      <!-- <ion-item class="animate__animated animate__fadeInUp" lines="none">
+        <div class="item_inner d-flex">
+          <div class="input_box">
+            <ion-label mode="md" position="stacked">شرح مختصری از فعالیت ها وعلایق خود بنویسید</ion-label>
+            <ion-textarea
+              mode="md"
+              type="text"
+              name="selfDescription"
+              maxlength="150"
+              [(ngModel)]="model.selfDescription"
+              #selfDescRef="ngModel"
+            ></ion-textarea>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item
+        *ngIf="!selfDescRef.valid && selfDescRef.touched"
+        class="animate__animated animate__fadeInUp"
+        lines="none"
+      >
+        <ion-label mode="md" position="stacked"
+          >حداکثر 150 کاراکتر</ion-label
+        >
+      </ion-item> -->
+
+      <!-- <ion-item class="animate__animated animate__fadeInUp" lines="none">
+        <div class="item_inner d-flex">
+          <div class="input_box">
+            <ion-label mode="md" position="stacked">هیات علمی دانشگاه</ion-label>
+            <ion-input
+              mode="md"
+              name="universityOfFaculty"
+              ngModel
+              placeholder="اگر عضو هیات علمی هستید نام دانشگاه را وارد کنید"
+              #uniOfFcltyRef="ngModel"
+              maxlength="30"
+            ></ion-input>
+          </div>
+        </div>
+      </ion-item> -->
+
+      <ion-item class="animate__animated animate__fadeInUp" lines="none">
+        <div class="item_inner d-flex">
+          <div class="input_box">
+            <ion-label mode="md" position="stacked">نام مطب/درمانگاه/بیمارستان</ion-label>
+            <ion-input
+              mode="md"
+              type="text"
+              name="InstituteName"
+              ngModel
+              required
+              maxlength="30"
+              #instituteNameRef="ngModel"
+            ></ion-input>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item
+        *ngIf="!instituteNameRef.valid && instituteNameRef.touched"
+        class="animate__animated animate__fadeInUp"
+        lines="none"
+      >
+        <ion-label mode="md" position="stacked"
+          >اجباری</ion-label
+        >
+      </ion-item>
+
+      <!-- <ion-item class="animate__animated animate__fadeInUp" lines="none">
+        <div class="item_inner d-flex">
+          <div class="input_box">
+            <ion-label mode="md" position="stacked"
+              >سمت</ion-label
+            >
+            <ion-input
+              mode="md"
+              type="text"
+              name="jobPosition"
+              required
+              maxlength="20"
+              ngModel
+              #jobPositionRef="ngModel"
+            ></ion-input>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item
+        *ngIf="!jobPositionRef.valid && jobPositionRef.touched"
+        class="animate__animated animate__fadeInUp"
+        lines="none"
+      >
+        <ion-label mode="md" position="stacked"
+          >اجباری</ion-label
+        >
+      </ion-item> -->
+
+      <ion-item class="animate__animated animate__fadeInUp" lines="none">
+        <div class="item_inner d-flex">
+          <div class="input_box">
+            <ion-label mode="md" position="stacked"
+              >سال شروع</ion-label
+            >
+            <ion-input
+              mode="md"
+              type="number"
+              name="startingYear"
+              ngModel
+              required
+              min="1300"
+              max="1400"
+              #startYearRef="ngModel"
+            ></ion-input>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item
+        *ngIf="!startYearRef.valid && startYearRef.touched"
+        class="animate__animated animate__fadeInUp"
+        lines="none"
+      >
+        <ion-label mode="md" position="stacked"
+          >اجباری</ion-label
+        >
+      </ion-item>
+
+      <ion-item class="animate__animated animate__fadeInUp" lines="none">
+        <div class="item_inner d-flex">
+          <div class="input_box">
+            <ion-label mode="md" position="stacked"
+              >سال پایان</ion-label
+            >
+            <ion-input
+              mode="md"
+              type="number"
+              name="endYear"
+              ngModel
+              required
+              [min]="startYearRef.value"
+              max="1400"
+              #endYearRef="ngModel"
+            ></ion-input>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item
+        *ngIf="!endYearRef.valid && endYearRef.touched"
+        class="animate__animated animate__fadeInUp"
+        lines="none"
+      >
+        <ion-label mode="md" position="stacked"
+          >اجباری</ion-label
+        >
+      </ion-item>
+
+      <ion-item class="animate__animated animate__fadeInUp" lines="none">
+        <div class="item_inner d-flex">
+          <div class="input_box">
+            <ion-label mode="md" position="stacked">در حال کار هستم</ion-label>
+            <ion-checkbox mode="md" name="isWorking"></ion-checkbox>
+          </div>
+        </div>
+      </ion-item>
+
+      <ion-button padding type="submit" [disabled]="!form.valid" class="btn"
+        >ذخیره تغییرات</ion-button
+      >
+    </div>
+  </form>
+</ion-list>

@@ -1,0 +1,323 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title> {{'edit_profile' | translate}} </ion-title>
+  </ion-toolbar>
+
+  <ion-segment
+    mode="ios"
+    scrollable
+    (ionChange)="onSegmentChange()"
+    [(ngModel)]="segment"
+  >
+    <ion-segment-button mode="ios" value="0">
+      <ion-label>اطلاعات اولیه</ion-label>
+    </ion-segment-button>
+    <ion-segment-button mode="ios" value="1">
+      <ion-label>اطلاعات تماس</ion-label>
+    </ion-segment-button>
+    <ion-segment-button mode="ios" value="2">
+      <ion-label>اطلاعات تخصصی</ion-label>
+    </ion-segment-button>
+    <ion-segment-button mode="ios" value="3">
+      <ion-label>سوابق تحصیلی</ion-label>
+    </ion-segment-button>
+    <ion-segment-button mode="ios" value="4">
+      <ion-label>سوابق کاری</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+</ion-header>
+
+<ion-content class="bg_color" fullscreen>
+  <div class="tab_content">
+    <ion-slides #slides (ionSlideDidChange)="onSlideChange()">
+      <ion-slide>
+        <ion-list lines="none">
+          <ion-item class="feature_image animate__animated animate__fadeInUp">
+            <div class="item_inner">
+              <h2>{{'feature_image' | translate}}</h2>
+              <div class="d-flex" style="align-items: flex-start">
+                <div class="img_box center_img">
+                  <img src="assets/images/img_profile.png" class="crop_img" />
+                </div>
+                <h3 class="d-flex">
+                  <ion-icon class="zmdi zmdi-camera ion-text-start"></ion-icon>
+                  {{'upload_photo' | translate}}
+                </h3>
+              </div>
+            </div>
+          </ion-item>
+
+          <form [formGroup]="form" (ngSubmit)="saveForm()">
+            <div class="form">
+              <h2>{{'profile_info' | translate}}</h2>
+
+              <ion-item
+                class="animate__animated animate__fadeInUp"
+                lines="none"
+              >
+                <div class="item_inner d-flex">
+                  <div class="input_box">
+                    <ion-label mode="md" position="stacked">نام</ion-label>
+                    <ion-input
+                      mode="md"
+                      formControlName="firstName"
+                      maxlength="20"
+                    ></ion-input>
+                  </div>
+                </div>
+              </ion-item>
+              <ion-item
+                *ngIf="!form.get('firstName').valid && form.get('firstName').touched"
+                class="animate__animated animate__fadeInUp"
+                lines="none"
+              >
+                <ion-label mode="md" position="stacked"
+                  >نام خود را وارد نمایید</ion-label
+                >
+              </ion-item>
+
+              <ion-item
+                class="animate__animated animate__fadeInUp"
+                lines="none"
+              >
+                <div class="item_inner d-flex">
+                  <div class="input_box">
+                    <ion-label mode="md" position="stacked"
+                      >نام خانوادگی</ion-label
+                    >
+                    <ion-input
+                      mode="md"
+                      type="name"
+                      formControlName="lastName"
+                      maxlength="20"
+                    ></ion-input>
+                  </div>
+                </div>
+              </ion-item>
+              <ion-item
+                *ngIf="!form.get('lastName').valid && form.get('lastName').touched"
+                class="animate__animated animate__fadeInUp"
+                lines="none"
+              >
+                <ion-label mode="md" position="stacked"
+                  >نام خانوادکی خود را وارد نمایید</ion-label
+                >
+              </ion-item>
+
+              <ion-item
+                class="animate__animated animate__fadeInUp"
+                lines="none"
+              >
+                <div class="item_inner d-flex">
+                  <div class="input_box">
+                    <ion-label mode="md" position="stacked">کد ملی</ion-label>
+                    <ion-input
+                      mode="md"
+                      type="text"
+                      dir="ltr"
+                      formControlName="nationalCode"
+                    ></ion-input>
+                  </div>
+                </div>
+              </ion-item>
+              <ion-item
+                *ngIf="!form.get('nationalCode').valid && form.get('nationalCode').touched"
+                class="animate__animated animate__fadeInUp"
+                lines="none"
+              >
+                <ion-label mode="md" position="stacked"
+                  >کد ملی وارد شده صحیح نیست</ion-label
+                >
+              </ion-item>
+
+              <ion-item
+                class="animate__animated animate__fadeInUp"
+                lines="none"
+              >
+                <div class="item_inner d-flex">
+                  <div class="input_box">
+                    <ion-label mode="md" position="stacked"
+                      >{{"gender" | translate}}</ion-label
+                    >
+                    <div class="d-flex" style="align-items: flex-end">
+                      <ion-select
+                        mode="ios"
+                        interface="popover"
+                        formControlName="gender"
+                      >
+                        <ion-select-option value="female">خانم</ion-select-option>
+                        <ion-select-option value="male">آقا</ion-select-option>
+                      </ion-select>
+                      <ion-icon
+                        class="zmdi zmdi-chevron-down ion-text-end end"
+                      ></ion-icon>
+                    </div>
+                  </div>
+                </div>
+              </ion-item>
+              <ion-item
+                *ngIf="!form.get('gender').valid && form.get('gender').touched"
+                class="animate__animated animate__fadeInUp"
+                lines="none"
+              >
+                <ion-label mode="md" position="stacked"
+                  >جنسیت را انتخاب نمایید</ion-label
+                >
+              </ion-item>
+
+              <ion-item
+                class="animate__animated animate__fadeInUp"
+                lines="none"
+              >
+                <div class="item_inner d-flex">
+                  <div class="input_box">
+                    <ion-label mode="md" position="stacked">محل تولد</ion-label>
+                    <ion-input
+                      mode="md"
+                      type="text"
+                      formControlName="placeOfBirth"
+                      maxlength="15"
+                    ></ion-input>
+                  </div>
+                </div>
+              </ion-item>
+              <ion-item
+                *ngIf="!form.get('placeOfBirth').valid && form.get('placeOfBirth').touched"
+                class="animate__animated animate__fadeInUp"
+                lines="none"
+              >
+                <ion-label mode="md" position="stacked"
+                  >شهر محل تولد خود را وارد نمایید</ion-label
+                >
+              </ion-item>
+
+              <ion-item
+                class="animate__animated animate__fadeInUp"
+                lines="none"
+              >
+                <div class="item_inner d-flex">
+                  <div class="input_box">
+                    <ion-label mode="md" position="stacked">سال تولد</ion-label>
+                    <ion-input
+                      mode="md"
+                      type="number"
+                      dir="ltr"
+                      min="1300"
+                      max="1380"
+                      formControlName="yearOfBirth"
+                    ></ion-input>
+                  </div>
+                </div>
+              </ion-item>
+              <ion-item
+                *ngIf="!form.get('yearOfBirth').valid && form.get('yearOfBirth').touched"
+                class="animate__animated animate__fadeInUp"
+                lines="none"
+              >
+                <ion-label mode="md" position="stacked"
+                  >سال تولد خود را وارد نمایید</ion-label
+                >
+              </ion-item>
+
+              <ion-item
+                class="animate__animated animate__fadeInUp"
+                lines="none"
+              >
+                <div class="item_inner d-flex">
+                  <div class="input_box">
+                    <ion-label mode="md" position="stacked"
+                      >{{"phone_number" | translate}}</ion-label
+                    >
+                    <ion-input
+                      mode="md"
+                      type="number"
+                      dir="ltr"
+                      formControlName="phoneNumber"
+                      pattern="^(09|9)\d{9}$"
+                    ></ion-input>
+                  </div>
+                </div>
+              </ion-item>
+              <ion-item
+                *ngIf="!form.get('phoneNumber').valid && form.get('phoneNumber').touched"
+                class="animate__animated animate__fadeInUp"
+                lines="none"
+              >
+                <ion-label mode="md" position="stacked"
+                  >یک شماره موبایل صحیح وارد نمایید</ion-label
+                >
+              </ion-item>
+
+              <!-- <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                                <div class="item_inner d-flex">
+                                    <div class="input_box">
+                                        <ion-label mode="md" position="stacked">{{"email_address" | translate}}</ion-label>
+                                        <ion-input mode="md" type="text" placeholder="" value=""></ion-input>
+                                    </div>
+                                </div>
+                            </ion-item> -->
+              <ion-button
+                padding
+                type="submit"
+                [disabled]="!form.valid"
+                class="btn"
+                >ذخیره تغییرات</ion-button
+              >
+            </div>
+          </form>
+          <!-- <div class="form documentation animate__animated animate__fadeInUp">
+                        <h2>{{'documentation' | translate}}</h2>
+                        <ion-item class="animate__animated animate__fadeInUp active">
+                            <div class="item_inner d-flex">
+                                <ion-icon class="zmdi zmdi-shield-check ion-text-start"></ion-icon>
+                                <div class="text_box">
+                                    <h3>{{'goverment_id' | translate}}</h3>
+                                    <h4 class="d-flex">
+                                        <span class="id_details">myvoterid.jpg</span>
+                                        <span class="end ion-text-end">{{'upload' | translate}}</span>
+                                    </h4>
+                                </div>
+                            </div>
+                        </ion-item>
+
+                        <ion-item class="animate__animated animate__fadeInUp">
+                            <div class="item_inner d-flex">
+                                <ion-icon class="zmdi zmdi-assignment-alert ion-text-start"></ion-icon>
+                                <div class="text_box">
+                                    <h3>{{'goverment_id' | translate}}</h3>
+                                    <h4 class="d-flex">
+                                        <span class="id_details">{{'not_uploaded_yet' | translate}}</span>
+                                        <span class="end ion-text-end">{{'upload' | translate}}</span>
+                                    </h4>
+                                </div>
+                            </div>
+                        </ion-item>
+                    </div> -->
+        </ion-list>
+      </ion-slide>
+
+      <ion-slide>
+        <app-contact-info [userId]="userId"></app-contact-info>
+      </ion-slide>
+
+      <ion-slide>
+        <app-spec-info [userId]="userId"></app-spec-info>
+      </ion-slide>
+
+      <ion-slide>
+        <app-educ-info></app-educ-info>
+      </ion-slide>
+
+      <ion-slide>
+        <app-work-resume></app-work-resume>
+      </ion-slide>
+    </ion-slides>
+  </div>
+</ion-content>
+
+<ion-footer class="ion-no-border animate__animated animate__fadeInUp">
+    <ion-button size="large" expand="full" class="btn stat" >وضعیت: در انتظار تایید</ion-button>
+</ion-footer>
