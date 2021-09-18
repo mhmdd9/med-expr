@@ -9,11 +9,12 @@ import { NavController } from "@ionic/angular";
 export class NewDeliveryPage implements OnInit {
   fabAction = false;
   newRequest = {
-    title: 'مشاوره تلفنی',
-    subjectTitle: 'بیمه',
+    title: 'ویزیت پزشک عمومی',
+    subjectTitle: '-',
     customerFullName: 'احسان کریمی',
     customerCity: 'کرج',
-    cost: '50000'
+    cost: '50000',
+    hour: '8-10'
   }
   constructor(private navCtrl: NavController) {}
 
@@ -22,6 +23,6 @@ export class NewDeliveryPage implements OnInit {
     this.fabAction = !this.fabAction;
   }
   accepted() {
-    this.navCtrl.navigateRoot(["./accepted"]);
+    this.navCtrl.navigateRoot(["./delivered-succesfully"]);
   }
 }

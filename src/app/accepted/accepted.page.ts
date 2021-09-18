@@ -10,7 +10,7 @@ import { ChatPage } from "../chat/chat.page";
 export class AcceptedPage implements OnInit {
   fabAction = true;
   newRequest = {
-    subjectTitle : 'بیمه',
+    subjectTitle : '-',
     duration: '30',
     cost:'50000'
   }

@@ -8,7 +8,7 @@ import { Router } from "@angular/router";
 export class WalletPage implements OnInit {
   transactions = [
     {
-      requestTitle: "مشاوره تلفنی",
+      requestTitle: "ویزیت پزشک عمومی",
       quantity: "200,000",
       date: "10 مرداد 1400",
       time: "11:59 am",
@@ -22,7 +22,7 @@ export class WalletPage implements OnInit {
       type: "برداشت وجه",
     },
     {
-      requestTitle: "مشاوره تلفنی",
+      requestTitle: "ویزیت پزشک عمومی",
       quantity: "150,000",
       date: "8 مرداد 1400",
       time: "8:30 am",

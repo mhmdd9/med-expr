@@ -10,7 +10,7 @@ export class SpecInfoService {
   constructor(private http: HttpClient) { }
   
   saveSpecInfo(entity: SpecInfoModel) {
-    this.http.post("http://localhost:8080/user/spec-info", entity)
+    this.http.post("http://localhost:8080/user/spec-info", entity).subscribe();
   }
 
   findById(userId: number): Observable<any> {

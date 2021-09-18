@@ -100,20 +100,13 @@
                 okText="تایید"
                 cancelText="انصراف"
                 name="specialties"
-                #acpWorkScopesRef="ngModel"
+                #specialtiesRef="ngModel"
                 ngModel
                 required
               >
-                <ion-select-option value="family">زنان</ion-select-option>
-                <ion-select-option value="land">مغز و اعصاب</ion-select-option>
-                <ion-select-option value="crime">جراحی</ion-select-option>
-                <ion-select-option value="tax">پوست و مو</ion-select-option>
-                <ion-select-option value="military"
-                  >عفونی</ion-select-option
-                >
-                <ion-select-option value="work">گوش حلق و بینی</ion-select-option>
-                <ion-select-option value="judge">کلیه و مجاری ادراری</ion-select-option>
-                <ion-select-option value="insurance">چشم</ion-select-option>
+                <ion-select-option *ngFor="let sp of specialties" [value]="sp.code">
+                  {{ sp.title }}
+                </ion-select-option>
               </ion-select>
               <ion-icon
                 class="zmdi zmdi-chevron-down ion-text-end end"
@@ -123,7 +116,7 @@
         </div>
       </ion-item>
       <ion-item
-        *ngIf="!acpWorkScopesRef.valid && acpWorkScopesRef.touched"
+        *ngIf="!specialtiesRef.valid && specialtiesRef.touched"
         class="animate__animated animate__fadeInUp"
         lines="none"
       >
@@ -138,10 +131,9 @@
             <ion-label mode="md" position="stacked">هیات علمی دانشگاه</ion-label>
             <ion-input
               mode="md"
-              name="universityOfFaculty"
+              name="universityOfFacultyName"
               ngModel
               placeholder="اگر عضو هیات علمی هستید نام دانشگاه را وارد کنید"
-              #uniOfFcltyRef="ngModel"
               maxlength="30"
             ></ion-input>
           </div>

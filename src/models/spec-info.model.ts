@@ -2,8 +2,8 @@ export class SpecInfoModel {
   constructor(
     public licenseNo: string,
     public medicalSystemNo: string,
-    public specialties: number[],
-    public universityOfFaculty: string,
+    public specialtyCodes: number[],
+    public universityOfFacultyName: string,
     public id: number
   ) {}
 }
