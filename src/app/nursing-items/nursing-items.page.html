@@ -1,0 +1,1847 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" mode="md">
+      <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <div class="title_inner d-flex">
+        <ion-icon class="zmdi zmdi-search end ion-text-end"></ion-icon>
+      </div>
+    </ion-title>
+  </ion-toolbar>
+
+  <div class="store_details">
+    <h2 class="animate__animated animate__fadeInUp"> انتخاب نوع خدمات</h2>
+<!--    <h4 class="d-flex animate__animated animate__fadeInUp">-->
+<!--      <ion-icon class="zmdi zmdi-pin ion-text-start"></ion-icon>-->
+<!--      6.4 km | Union Market-->
+<!--    </h4>-->
+<!--    <div class="d-flex animate__animated animate__fadeInUp">-->
+<!--      <h4 class="d-flex">-->
+<!--        <ion-icon class="zmdi zmdi-time ion-text-start"></ion-icon>-->
+<!--        22 MINS-->
+<!--      </h4>-->
+
+<!--      <h5 class="d-flex end" (click)="reviews()">-->
+<!--        <ion-icon class="zmdi zmdi-star ion-text-start"></ion-icon>-->
+<!--        4.2-->
+<!--        &nbsp; &nbsp;-->
+<!--        <span>148 {{'reviews' | translate}}-->
+<!--          <ion-icon class="zmdi zmdi-chevron-right ion-text-end"></ion-icon>-->
+<!--                </span>-->
+<!--      </h5>-->
+<!--    </div>-->
+  </div>
+  <!--
+  <div class="search_box">
+      <ion-icon class="zmdi zmdi-search ion-text-start"></ion-icon>
+      <ion-searchbar class="ion-no-padding" searchIcon="hide" placeholder="{{'search_item_or_store' | translate}}"></ion-searchbar>
+  </div>
+-->
+  <ion-segment mode="ios" (ionChange)="segmentChanged()" [(ngModel)]="segment" scrollable>
+    <ion-segment-button mode="ios" value="0">
+      <ion-label>نوع و تعداد خدمات را انتخاب نمایید</ion-label>
+    </ion-segment-button>
+<!--    <ion-segment-button mode="ios" value="1">-->
+<!--      <ion-label>Fruits</ion-label>-->
+<!--    </ion-segment-button>-->
+<!--    <ion-segment-button mode="ios" value="2">-->
+<!--      <ion-label>Herbs</ion-label>-->
+<!--    </ion-segment-button>-->
+<!--    <ion-segment-button mode="ios" value="3">-->
+<!--      <ion-label>Dairy</ion-label>-->
+<!--    </ion-segment-button>-->
+<!--    <ion-segment-button mode="ios" value="4">-->
+<!--      <ion-label>Vegetables</ion-label>-->
+<!--    </ion-segment-button>-->
+<!--    <ion-segment-button mode="ios" value="5">-->
+<!--      <ion-label>Fruits</ion-label>-->
+<!--    </ion-segment-button>-->
+<!--    <ion-segment-button mode="ios" value="6">-->
+<!--      <ion-label>Herbs</ion-label>-->
+<!--    </ion-segment-button>-->
+<!--    <ion-segment-button mode="ios" value="7">-->
+<!--      <ion-label>Dairy</ion-label>-->
+<!--    </ion-segment-button>-->
+  </ion-segment>
+</ion-header>
+
+<ion-content fullscreen>
+  <div class="tab_content">
+    <ion-slides #slides (ionSlideDidChange)="slideChanged()">
+      <ion-slide>
+        <ion-list lines="none">
+          <ion-item class="animate__animated animate__fadeInUp">
+            <div class="item_inner d-flex">
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/onion.png">-->
+<!--              </div>-->
+              <div class="text_box">
+                <h3>سرم تراپی</h3>
+
+                <div class="buttons d-flex">
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                                              <h6 class="end">{{'add' | translate}}</h6>-->
+                  <h4>145,000 تومان</h4>
+                  <p class="end">
+                    <span (click)="reduceCount()">-</span>
+                    <strong>{{serumCount}}</strong>
+                    <span (click)="addCount()">+</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </ion-item>
+
+          <ion-item class="animate__animated animate__fadeInUp">
+            <div class="item_inner d-flex">
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/Cauliflower .png">-->
+<!--              </div>-->
+              <div class="text_box">
+                <h3>سرم تراپی به همراه 1 انفوزیون در سرم</h3>
+
+                <div class="buttons d-flex">
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+                  <h4>160,000 تومان</h4>
+                  <h6 class="end">{{'add' | translate}}</h6>
+                  <!--<p class="end">
+                    <span>-</span>
+                    <strong>1</strong>
+                    <span>+</span>
+                  </p>-->
+                </div>
+              </div>
+            </div>
+          </ion-item>
+
+          <ion-item class="animate__animated animate__fadeInUp">
+            <div class="item_inner d-flex">
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/tomato.png">-->
+<!--              </div>-->
+              <div class="text_box">
+                <h3>سرم تراپی به همراه تزریق عضلانی</h3>
+                <div class="buttons d-flex">
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+                  <h4>180,000 تومان</h4>
+                  <h6 class="end">{{'add' | translate}}</h6>
+                </div>
+              </div>
+            </div>
+          </ion-item>
+
+          <ion-item class="animate__animated animate__fadeInUp">
+            <div class="item_inner d-flex">
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/lady_finger.png">-->
+<!--              </div>-->
+              <div class="text_box">
+                <h3>سرم تراپی به همراه سنجش اکسیژن خون</h3>
+                <div class="buttons d-flex">
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+                  <h4>185,000 تومان</h4>
+                  <h6 class="end">{{'add' | translate}}</h6>
+                </div>
+              </div>
+            </div>
+          </ion-item>
+
+          <ion-item class="animate__animated animate__fadeInUp">
+            <div class="item_inner d-flex">
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/Potatoes.png">-->
+<!--              </div>-->
+              <div class="text_box">
+                <h3>سرم تراپی به همراه اقامت</h3>
+                <div class="buttons d-flex">
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+                  <h4>225,000 تومان</h4>
+                  <h6 class="end">{{'add' | translate}}</h6>
+                </div>
+              </div>
+            </div>
+          </ion-item>
+          <ion-item class="animate__animated animate__fadeInUp">
+            <div class="item_inner d-flex">
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/tomato.png">-->
+<!--              </div>-->
+              <div class="text_box">
+                <h3>سرم تراپی به همراه کنترل فشار خون</h3>
+                <div class="buttons d-flex">
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+                  <h4>185,000 تومان</h4>
+                  <h6 class="end">{{'add' | translate}}</h6>
+                </div>
+              </div>
+            </div>
+          </ion-item>
+
+          <ion-item class="animate__animated animate__fadeInUp">
+            <div class="item_inner d-flex">
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/lady_finger.png">-->
+<!--              </div>-->
+              <div class="text_box">
+                <h3>سونداژ</h3>
+                <div class="buttons d-flex">
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+                  <h4>175,000 تومان</h4>
+                  <h6 class="end">{{'add' | translate}}</h6>
+                </div>
+              </div>
+            </div>
+          </ion-item>
+
+          <ion-item class="animate__animated animate__fadeInUp">
+            <div class="item_inner d-flex">
+              <!--<div class="img_box">
+                <img src="assets/images/Potatoes.png">
+              </div>-->
+              <div class="text_box">
+                <h3>ساکشن تراپی</h3>
+                <div class="buttons d-flex">
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+                  <h4>210,000 تومان</h4>
+                  <h6 class="end">{{'add' | translate}}</h6>
+                </div>
+              </div>
+            </div>
+          </ion-item>
+          <ion-item class="animate__animated animate__fadeInUp">
+            <div class="item_inner d-flex">
+              <!--<div class="img_box">
+                <img src="assets/images/tomato.png">
+              </div>-->
+              <div class="text_box">
+                <h3>ان جی</h3>
+                <div class="buttons d-flex">
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+                  <h4>250,000 تومان</h4>
+                  <h6 class="end">{{'add' | translate}}</h6>
+                </div>
+              </div>
+            </div>
+          </ion-item>
+
+          <ion-item class="animate__animated animate__fadeInUp">
+            <div class="item_inner d-flex">
+              <!--<div class="img_box">
+                <img src="assets/images/lady_finger.png">
+              </div>-->
+              <div class="text_box">
+                <h3>پانسمان</h3>
+                <div class="buttons d-flex">
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+                  <h4>210,000</h4>
+                  <h6 class="end">{{'add' | translate}}</h6>
+                </div>
+              </div>
+            </div>
+          </ion-item>
+
+          <ion-item class="animate__animated animate__fadeInUp">
+            <div class="item_inner d-flex">
+              <!--<div class="img_box">
+                <img src="assets/images/Potatoes.png">
+              </div>-->
+              <div class="text_box">
+                <h3>کشیدن بخیه</h3>
+                <div class="buttons d-flex">
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+                  <h4>220,000</h4>
+                  <h6 class="end">{{'add' | translate}}</h6>
+                </div>
+              </div>
+            </div>
+          </ion-item>
+          <ion-item class="animate__animated animate__fadeInUp">
+            <div class="item_inner d-flex">
+              <!--<div class="img_box">
+                <img src="assets/images/tomato.png">
+              </div>-->
+              <div class="text_box">
+                <h3>نوار قلب</h3>
+                <div class="buttons d-flex">
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+                  <h4>350,000</h4>
+                  <h6 class="end">{{'add' | translate}}</h6>
+                </div>
+              </div>
+            </div>
+          </ion-item>
+
+          <ion-item class="animate__animated animate__fadeInUp">
+            <div class="item_inner d-flex">
+              <!--<div class="img_box">
+                <img src="assets/images/lady_finger.png">
+              </div>-->
+              <div class="text_box">
+                <h3>اعزام پرستار تخصصی</h3>
+                <div class="buttons d-flex">
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+                  <h4>800,000</h4>
+                  <h6 class="end">{{'add' | translate}}</h6>
+                </div>
+              </div>
+            </div>
+          </ion-item>
+
+          <ion-item class="animate__animated animate__fadeInUp">
+            <div class="item_inner d-flex">
+              <!--<div class="img_box">
+                <img src="assets/images/Potatoes.png">
+              </div>-->
+              <div class="text_box">
+                <h3>اعزام پرایوت در بیمارستان</h3>
+                <div class="buttons d-flex">
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+                  <h4>900,000</h4>
+                  <h6 class="end">{{'add' | translate}}</h6>
+                </div>
+              </div>
+            </div>
+          </ion-item>
+          <ion-item class="animate__animated animate__fadeInUp">
+            <div class="item_inner d-flex">
+              <!--<div class="img_box">
+                <img src="assets/images/tomato.png">
+              </div>-->
+              <div class="text_box">
+                <h3>تست قند خون</h3>
+                <div class="buttons d-flex">
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+                  <h4>100,000</h4>
+                  <h6 class="end">{{'add' | translate}}</h6>
+                </div>
+              </div>
+            </div>
+          </ion-item>
+
+          <ion-item class="animate__animated animate__fadeInUp">
+            <div class="item_inner d-flex">
+              <!--<div class="img_box">
+                <img src="assets/images/lady_finger.png">
+              </div>-->
+              <div class="text_box">
+                <h3>کنترل فشار خون</h3>
+                <div class="buttons d-flex">
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+                  <h4>100,000</h4>
+                  <h6 class="end">{{'add' | translate}}</h6>
+                </div>
+              </div>
+            </div>
+          </ion-item>
+
+          <ion-item class="animate__animated animate__fadeInUp">
+            <div class="item_inner d-flex">
+              <!--<div class="img_box">
+                <img src="assets/images/Potatoes.png">
+              </div>-->
+              <div class="text_box">
+                <h3>انما</h3>
+                <div class="buttons d-flex">
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+                  <h4>320,000</h4>
+                  <h6 class="end">{{'add' | translate}}</h6>
+                </div>
+              </div>
+            </div>
+          </ion-item>
+          <ion-item class="animate__animated animate__fadeInUp">
+            <div class="item_inner d-flex">
+              <!--<div class="img_box">
+                <img src="assets/images/tomato.png">
+              </div>-->
+              <div class="text_box">
+                <h3>تزریقات در منزل</h3>
+                <div class="buttons d-flex">
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+                  <h4>120,000</h4>
+                  <h6 class="end">{{'add' | translate}}</h6>
+                </div>
+              </div>
+            </div>
+          </ion-item>
+
+          <ion-item class="animate__animated animate__fadeInUp">
+            <div class="item_inner d-flex">
+              <!--<div class="img_box">
+                <img src="assets/images/lady_finger.png">
+              </div>-->
+              <div class="text_box">
+                <h3>عکس اضافه رادیولوژی</h3>
+                <div class="buttons d-flex">
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+                  <h4>50,000</h4>
+                  <h6 class="end">{{'add' | translate}}</h6>
+                </div>
+              </div>
+            </div>
+          </ion-item>
+
+          <ion-item class="animate__animated animate__fadeInUp">
+            <div class="item_inner d-flex">
+              <!--<div class="img_box">
+                <img src="assets/images/Potatoes.png">
+              </div>-->
+              <div class="text_box">
+                <h3>سنجش اکسیژن خون</h3>
+                <div class="buttons d-flex">
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+                  <h4>140,000</h4>
+                  <h6 class="end">{{'add' | translate}}</h6>
+                </div>
+              </div>
+            </div>
+          </ion-item>
+          <ion-item class="animate__animated animate__fadeInUp">
+            <div class="item_inner d-flex">
+              <!--<div class="img_box">
+                <img src="assets/images/tomato.png">
+              </div>-->
+              <div class="text_box">
+                <h3>نوار مغزی</h3>
+                <div class="buttons d-flex">
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+                  <h4>1,800,000</h4>
+                  <h6 class="end">افزودن</h6>
+                </div>
+              </div>
+            </div>
+          </ion-item>
+        </ion-list>
+      </ion-slide>
+
+<!--      <ion-slide>-->
+<!--        <ion-list lines="none">-->
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/lady_finger.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Lady Finger</h3>-->
+<!--                <h4>$ 3.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/onion.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Red Onions</h3>-->
+<!--                <h4>$ 3.00</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/Cauliflower .png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Cauliflower</h3>-->
+<!--                <h4>$ 4.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/tomato.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Red Tomattoes</h3>-->
+<!--                <h4>$ 2.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/Potatoes.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Potatoes</h3>-->
+<!--                <h4>$ 4.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+<!--        </ion-list>-->
+<!--      </ion-slide>-->
+
+<!--      <ion-slide>-->
+<!--        <ion-list lines="none">-->
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/lady_finger.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Lady Finger</h3>-->
+<!--                <h4>$ 3.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/onion.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Red Onions</h3>-->
+<!--                <h4>$ 3.00</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/Cauliflower .png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Cauliflower</h3>-->
+<!--                <h4>$ 4.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/tomato.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Red Tomattoes</h3>-->
+<!--                <h4>$ 2.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/Potatoes.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Potatoes</h3>-->
+<!--                <h4>$ 4.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/lady_finger.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Lady Finger</h3>-->
+<!--                <h4>$ 3.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/onion.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Red Onions</h3>-->
+<!--                <h4>$ 3.00</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/Cauliflower .png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Cauliflower</h3>-->
+<!--                <h4>$ 4.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/tomato.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Red Tomattoes</h3>-->
+<!--                <h4>$ 2.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/Potatoes.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Potatoes</h3>-->
+<!--                <h4>$ 4.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/lady_finger.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Lady Finger</h3>-->
+<!--                <h4>$ 3.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/onion.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Red Onions</h3>-->
+<!--                <h4>$ 3.00</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/Cauliflower .png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Cauliflower</h3>-->
+<!--                <h4>$ 4.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/tomato.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Red Tomattoes</h3>-->
+<!--                <h4>$ 2.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/Potatoes.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Potatoes</h3>-->
+<!--                <h4>$ 4.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/lady_finger.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Lady Finger</h3>-->
+<!--                <h4>$ 3.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/onion.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Red Onions</h3>-->
+<!--                <h4>$ 3.00</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/Cauliflower .png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Cauliflower</h3>-->
+<!--                <h4>$ 4.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/tomato.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Red Tomattoes</h3>-->
+<!--                <h4>$ 2.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/Potatoes.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Potatoes</h3>-->
+<!--                <h4>$ 4.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/lady_finger.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Lady Finger</h3>-->
+<!--                <h4>$ 3.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/onion.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Red Onions</h3>-->
+<!--                <h4>$ 3.00</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/Cauliflower .png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Cauliflower</h3>-->
+<!--                <h4>$ 4.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/tomato.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Red Tomattoes</h3>-->
+<!--                <h4>$ 2.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/Potatoes.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Potatoes</h3>-->
+<!--                <h4>$ 4.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/lady_finger.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Lady Finger</h3>-->
+<!--                <h4>$ 3.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/onion.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Red Onions</h3>-->
+<!--                <h4>$ 3.00</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/Cauliflower .png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Cauliflower</h3>-->
+<!--                <h4>$ 4.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/tomato.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Red Tomattoes</h3>-->
+<!--                <h4>$ 2.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/Potatoes.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Potatoes</h3>-->
+<!--                <h4>$ 4.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+<!--          <ion-item>-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/lady_finger.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Lady Finger</h3>-->
+<!--                <h4>$ 3.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/onion.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Red Onions</h3>-->
+<!--                <h4>$ 3.00</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/Cauliflower .png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Cauliflower</h3>-->
+<!--                <h4>$ 4.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/tomato.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Red Tomattoes</h3>-->
+<!--                <h4>$ 2.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/Potatoes.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Potatoes</h3>-->
+<!--                <h4>$ 4.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+<!--        </ion-list>-->
+<!--      </ion-slide>-->
+
+
+<!--      <ion-slide>-->
+<!--        <ion-list lines="none">-->
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/tomato.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Red Tomattoes</h3>-->
+<!--                <h4>$ 2.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/lady_finger.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Lady Finger</h3>-->
+<!--                <h4>$ 3.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/onion.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Red Onions</h3>-->
+<!--                <h4>$ 3.00</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/Cauliflower .png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Cauliflower</h3>-->
+<!--                <h4>$ 4.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/Potatoes.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Potatoes</h3>-->
+<!--                <h4>$ 4.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+<!--        </ion-list>-->
+<!--      </ion-slide>-->
+
+
+<!--      <ion-slide>-->
+<!--        <ion-list lines="none">-->
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/onion.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Red Onions</h3>-->
+<!--                <h4>$ 3.00</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/tomato.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Red Tomattoes</h3>-->
+<!--                <h4>$ 2.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/lady_finger.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Lady Finger</h3>-->
+<!--                <h4>$ 3.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/Cauliflower .png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Cauliflower</h3>-->
+<!--                <h4>$ 4.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/Potatoes.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Potatoes</h3>-->
+<!--                <h4>$ 4.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+<!--        </ion-list>-->
+<!--      </ion-slide>-->
+
+
+
+<!--      <ion-slide>-->
+<!--        <ion-list lines="none">-->
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/onion.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Red Onions</h3>-->
+<!--                <h4>$ 3.00</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/Cauliflower .png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Cauliflower</h3>-->
+<!--                <h4>$ 4.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/tomato.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Red Tomattoes</h3>-->
+<!--                <h4>$ 2.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/lady_finger.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Lady Finger</h3>-->
+<!--                <h4>$ 3.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/Potatoes.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Potatoes</h3>-->
+<!--                <h4>$ 4.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+<!--        </ion-list>-->
+<!--      </ion-slide>-->
+
+<!--      <ion-slide>-->
+<!--        <ion-list lines="none">-->
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/lady_finger.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Lady Finger</h3>-->
+<!--                <h4>$ 3.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/onion.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Red Onions</h3>-->
+<!--                <h4>$ 3.00</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/Cauliflower .png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Cauliflower</h3>-->
+<!--                <h4>$ 4.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/tomato.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Red Tomattoes</h3>-->
+<!--                <h4>$ 2.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/Potatoes.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Potatoes</h3>-->
+<!--                <h4>$ 4.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+<!--        </ion-list>-->
+<!--      </ion-slide>-->
+
+
+<!--      <ion-slide>-->
+<!--        <ion-list lines="none">-->
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/lady_finger.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Lady Finger</h3>-->
+<!--                <h4>$ 3.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/onion.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Red Onions</h3>-->
+<!--                <h4>$ 3.00</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/Cauliflower .png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Cauliflower</h3>-->
+<!--                <h4>$ 4.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/tomato.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Red Tomattoes</h3>-->
+<!--                <h4>$ 2.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/Potatoes.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Potatoes</h3>-->
+<!--                <h4>$ 4.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+<!--        </ion-list>-->
+<!--      </ion-slide>-->
+
+
+<!--      <ion-slide>-->
+<!--        <ion-list lines="none">-->
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/tomato.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Red Tomattoes</h3>-->
+<!--                <h4>$ 2.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/lady_finger.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Lady Finger</h3>-->
+<!--                <h4>$ 3.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/onion.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Red Onions</h3>-->
+<!--                <h4>$ 3.00</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/Cauliflower .png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Cauliflower</h3>-->
+<!--                <h4>$ 4.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/Potatoes.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Potatoes</h3>-->
+<!--                <h4>$ 4.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+<!--        </ion-list>-->
+<!--      </ion-slide>-->
+
+<!--      <ion-slide>-->
+<!--        <ion-list lines="none">-->
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/onion.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Red Onions</h3>-->
+<!--                <h4>$ 3.00</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/tomato.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Red Tomattoes</h3>-->
+<!--                <h4>$ 2.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/lady_finger.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Lady Finger</h3>-->
+<!--                <h4>$ 3.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/Cauliflower .png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Cauliflower</h3>-->
+<!--                <h4>$ 4.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+<!--          <ion-item class="animate__animated animate__fadeInUp">-->
+<!--            <div class="item_inner d-flex">-->
+<!--              <div class="img_box">-->
+<!--                <img src="assets/images/Potatoes.png">-->
+<!--              </div>-->
+<!--              <div class="text_box">-->
+<!--                <h3>Fresh Potatoes</h3>-->
+<!--                <h4>$ 4.50</h4>-->
+<!--                <div class="buttons d-flex">-->
+<!--                  <h5 (click)="variation_selection()">1 kg-->
+<!--                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>-->
+<!--                  </h5>-->
+<!--                  <h6 class="end">{{'add' | translate}}</h6>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+<!--        </ion-list>-->
+<!--      </ion-slide>-->
+    </ion-slides>
+  </div>
+</ion-content>
+
+<ion-footer class="ion-no-border animate__animated animate__fadeInUp">
+  <div class="cart_btn" (click)="dismissModal()">
+    <h2 class="d-flex">
+<!--      <img src="assets/images/ic_cart_wt.png">&nbsp; &nbsp;-->
+      <span> {{ total | currency:'':'':'1.0-0'}} </span>
+      <span class="end">{{'تایید و بازگشت' | translate}}</span>
+    </h2>
+  </div>
+</ion-footer>

@@ -86,6 +86,22 @@ const routes: Routes = [
   {
     path: 'chat-with-customer',
     loadChildren: () => import('./chat-with-customer/chat-with-customer.module').then( m => m.ChatWithCustomerPageModule)
+  },
+  {
+    path: 'my-tasks',
+    loadChildren: () => import('./my-tasks/my-tasks.module').then( m => m.MyTasksPageModule)
+  },
+  {
+    path: 'task-detail',
+    loadChildren: () => import('./task-detail/task-detail.module').then( m => m.TaskDetailPageModule)
+  },
+  {
+    path: 'nursing-items',
+    loadChildren: () => import('./nursing-items/nursing-items.module').then( m => m.NursingItemsPageModule)
+  },
+  {
+    path: 'variation-selection',
+    loadChildren: () => import('./variation-selection/variation-selection.module').then( m => m.VariationSelectionPageModule)
   }
 
 ];

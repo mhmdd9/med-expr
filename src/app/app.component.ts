@@ -31,6 +31,11 @@ export class AppComponent implements OnInit {
     //   url: "/insight",
     // },
     {
+      title: "کارهای من",
+      image: "assets/images/ic_menu_wallet.png",
+      url: "/my-tasks",
+    },
+    {
       title: "wallet",
       image: "assets/images/ic_menu_wallet.png",
       url: "/wallet",

@@ -1,0 +1,116 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" mode="md">
+      <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+    </ion-buttons>
+    <ion-title></ion-title>
+  </ion-toolbar>
+  <ion-item lines="none">
+    <div class="item_inner">
+      <div class="item_info d-flex animate__animated animate__fadeInUp">
+<!--        <div class="itme_img">-->
+<!--          <img src="assets/images/">-->
+<!--        </div>-->
+        <div class="item_details">
+          <h3 class="d-flex">
+            بررسی نسخه
+<!--            <span class="end order_status">-->
+<!--                            {{'pickup_arranged' | translate}}-->
+<!--                        </span>-->
+          </h3>
+<!--          <h4 class="d-flex">20 Jun, 11:35 am <span class="end">$ 11.50 | COD</span></h4>-->
+        </div>
+      </div>
+<!--      <div class="address_info animate__animated animate__fadeInUp">-->
+<!--        <div class="from_to d-flex animate__animated animate__fadeInUp">-->
+<!--          <div class="icon_box d-flex">-->
+<!--            <ion-icon></ion-icon>-->
+<!--          </div>-->
+<!--          <h5>خدمات پرستاری </h5>-->
+<!--        </div>-->
+<!--      </div>-->
+    </div>
+  </ion-item>
+</ion-header>
+
+<ion-content class="bg_color" fullscreeen>
+<!--  <div class="map center_img">-->
+<!--    <img src="assets/images/map.png" class="crop_img">-->
+<!--    <div class="delivery_location" style="top: 4%; right: 77%; transform: rotate(-164deg);">-->
+<!--      <img src="assets/images/deliveryman.png">-->
+<!--    </div>-->
+<!--    <ion-icon class="zmdi zmdi-pin ion-text-center animate__animated animate__zoomIn" style="top: 20%; right: 79%;"></ion-icon>-->
+<!--    <ion-icon class="zmdi zmdi-navigation ion-text-center animate__animated animate__zoomIn" style="top: 36%; right: 35%;"></ion-icon>-->
+<!--  </div>-->
+
+
+  <ion-list class="animate__animated animate__fadeInUp active" lines="none">
+    <ion-item class="profile_info">
+      <div class="item_inner d-flex">
+<!--        <div class="img_box center_img">-->
+<!--          <img src="assets/images/img_profile.png" class="crop_img">-->
+<!--        </div>-->
+        <div class="text_box">
+          <h2> سامان اصلانی </h2>
+          <h3> تهران - منطقه شش </h3>
+        </div>
+        <div class="icon_box end">
+          <ion-icon class="zmdi zmdi-comment-alt-text ion-text-start" ></ion-icon>
+          <ion-icon class="zmdi zmdi-phone ion-text-end"></ion-icon>
+        </div>
+      </div>
+    </ion-item>
+
+    <div class="list-inner">
+      <div class="item_list">
+        <ion-item>
+          <div class="item_inner">
+            <div class="text_box">
+              <h3>عکس های نسخه</h3>
+              <div class="buttons d-flex">
+                <h5>دانلود</h5>
+                <ion-icon class="zmdi zmdi-download ion-text-end"></ion-icon>
+              </div>
+            </div>
+          </div>
+        </ion-item>
+      </div>
+
+      <div class="form">
+        <ion-item lines="none">
+          <div class="item_inner d-flex">
+            <div class="icon_box ion-text-start"><img src="assets/images/ic_instruction.png"></div>
+            <div class="input_box">
+              <ion-input mode="md" type="name" readonly="boolean" value="توضیحات وارد شده توسط درخواست کننده"></ion-input>
+            </div>
+          </div>
+        </ion-item>
+      </div>
+
+      <div class="form">
+        <ion-item lines="none">
+          <div class="item_inner d-flex">
+            <div class="input_box">
+              <ion-button (click)="nursingItems()">وارد کردن مشخصات نسخه</ion-button>
+            </div>
+          </div>
+        </ion-item>
+        <ion-item lines="none" *ngIf="showEm">
+          <div class="item_inner d-flex">
+            <div class="icon_box ion-text-start"><img src="assets/images/ic_instruction.png"></div>
+            <div class="input_box">
+              <ion-icon class="zmdi zmdi-comment-alt-text ion-text-end" (click)="nursingItems()"></ion-icon>
+            </div>
+          </div>
+        </ion-item>
+      </div>
+
+    </div>
+  </ion-list>
+</ion-content>
+
+<ion-footer class="ion-no-border d-flex animate__animated animate__fadeInUp">
+  <h6 class="end d-flex" (click)="confirm()">
+    <span>تایید نهایی</span>
+  </h6>
+</ion-footer>

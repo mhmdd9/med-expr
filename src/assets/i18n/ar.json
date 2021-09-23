@@ -29,7 +29,7 @@
     "earnings": "دریافتی",
     "new_delivery": "شما یک درخواست جدید دارید",
     "new_delivery_task": "درخواست جدید",
-    "wallet": "میز کار",
+    "wallet": "کیف پول",
     "available_balance": "موجودی اعتبار",
     "send_to_bank": "برداشت وجه",
     "recent": "کارهای اخیر",
@@ -79,5 +79,6 @@
     "last_years": "سال گذشته",
     "ride": "شروع",
     "view_all_transactions": "نمایش همه تراکنش ها",
-    "view_all_orders": "نمایش همه درخواست ها"
+    "view_all_orders": "نمایش همه درخواست ها",
+    "add": "افزودن"
 }
